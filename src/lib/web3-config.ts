@@ -55,28 +55,42 @@ export const somniaMainnet = defineChain({
 export const somniaTestnet = somniaShannon;
 export const somnia = somniaMainnet;
 
-// RainbowKit configuration with Somnia support
-const walletConnectProjectId = process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID;
-if (!walletConnectProjectId || walletConnectProjectId === 'demo-project-id') {
-  console.warn('⚠️ WalletConnect: Missing NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID in env');
+// RainbowKit configuration with Somnia support (lazily initialized to prevent SSR build issues)
+let _somniaChainConfigCache: ReturnType<typeof getDefaultConfig> | undefined;
+
+export function getSomniaChainConfig() {
+  if (!_somniaChainConfigCache) {
+    const walletConnectProjectId = process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID;
+    if (typeof window !== 'undefined' && (!walletConnectProjectId || walletConnectProjectId === 'demo-project-id')) {
+      console.warn('⚠️ WalletConnect: Missing NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID in env');
+    }
+    _somniaChainConfigCache = getDefaultConfig({
+      appName: 'PredictSOMNIA',
+      projectId: walletConnectProjectId || '7d5b379d54bd7c2bafb6464aacf75b68',
+      chains: [somniaShannon, somniaMainnet],
+      transports: {
+        [somniaShannon.id]: http(
+          process.env.NEXT_PUBLIC_SOMNIA_TESTNET_RPC_URL ||
+            process.env.NEXT_PUBLIC_SOMNIA_RPC_URL ||
+            'https://dream-rpc.somnia.network'
+        ),
+        [somniaMainnet.id]: http(
+          process.env.NEXT_PUBLIC_SOMNIA_MAINNET_RPC_URL ||
+            'https://api.infra.mainnet.somnia.network'
+        ),
+      },
+      ssr: true,
+    });
+  }
+  return _somniaChainConfigCache;
 }
 
-export const somniaChainConfig = getDefaultConfig({
-  appName: 'PredictSOMNIA',
-  projectId: walletConnectProjectId || '7d5b379d54bd7c2bafb6464aacf75b68',
-  chains: [somniaShannon, somniaMainnet],
-  transports: {
-    [somniaShannon.id]: http(
-      process.env.NEXT_PUBLIC_SOMNIA_TESTNET_RPC_URL ||
-        process.env.NEXT_PUBLIC_SOMNIA_RPC_URL ||
-        'https://dream-rpc.somnia.network'
-    ),
-    [somniaMainnet.id]: http(
-      process.env.NEXT_PUBLIC_SOMNIA_MAINNET_RPC_URL ||
-        'https://api.infra.mainnet.somnia.network'
-    ),
+export const somniaChainConfig = new Proxy({} as ReturnType<typeof getDefaultConfig>, {
+  get(_target, prop) {
+    const config = getSomniaChainConfig();
+    const val = (config as unknown as Record<string, unknown>)[prop as string];
+    return typeof val === 'function' ? val.bind(config) : val;
   },
-  ssr: true,
 });
 
 // Chain IDs for easy reference — Pure Somnia (no BSC)
