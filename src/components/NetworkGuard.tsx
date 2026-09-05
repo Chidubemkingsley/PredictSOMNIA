@@ -2,7 +2,8 @@
 
 import { useAccount, useChainId, useSwitchChain } from 'wagmi';
 import { useEffect, useState } from 'react';
-import { somnia, somniaTestnet } from 'wagmi/chains';
+import { somniaTestnet } from 'viem/chains';
+import { somniaMainnet as somnia } from '@/lib/web3-config';
 
 /**
  * NetworkGuard Component
