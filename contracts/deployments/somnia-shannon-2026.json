@@ -1,0 +1,14 @@
+{
+  "network": "somniaTestnet",
+  "chainId": 50312,
+  "timestamp": "2026-09-04T11:46:49.402Z",
+  "previousPredictionMarket": "0x67F7B580AEd6de246f7db70e19efdcE4Dd34Fc61",
+  "previousTraderReputation": "0xb53D700857D7e275C8f4F03d9580c3753729796f",
+  "contracts": {
+    "PredictionMarket": "0x29C1a65695D8B9E23Fb7775d81a7C4792f9c5661",
+    "TraderReputation": "0x580ABA453b81D68a2C7714df6096ba75DD8bDEF9",
+    "AIOracle": "0x86a6FBDA8C959Aa724876dbF0f58aD319942b030"
+  },
+  "deployer": "0x90356CF97B3BF1749A604d3F89b3DF3602A459E3",
+  "note": "New PM includes forceResolveMarket. Old PM still holds prior STT until its endTimes."
+}

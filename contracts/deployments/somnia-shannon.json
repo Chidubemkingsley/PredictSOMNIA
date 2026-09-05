@@ -1,0 +1,21 @@
+{
+  "network": "somniaTestnet",
+  "chainId": 50312,
+  "timestamp": "2026-09-04T11:46:49.402Z",
+  "contracts": {
+    "PredictionMarket_primary": "0x29C1a65695D8B9E23Fb7775d81a7C4792f9c5661",
+    "TraderReputation": "0x580ABA453b81D68a2C7714df6096ba75DD8bDEF9",
+    "AIOracle": "0x86a6FBDA8C959Aa724876dbF0f58aD319942b030",
+    "GaslessRelayer": "0x384B2460d7AC08Cef74B02E4D80108aDCa4B4A12",
+    "PredictionMarket_previous_PM2": "0x67F7B580AEd6de246f7db70e19efdcE4Dd34Fc61",
+    "TraderReputation_previous_PM2": "0xb53D700857D7e275C8f4F03d9580c3753729796f",
+    "AIOracle_previous_PM2": "0x23Fad86C778f26aD237A559800c7dBB0c0339D62",
+    "PredictionMarket_PM1": "0x68A0d6d7329B7f7Bffd74f2481f6DDD70aF16971",
+    "WSOMNIA3009": "0x5C46B206aF8a2148DD8813Bd69a03634562aC300",
+    "X402BettingSOMNIA": "0x2C01AFeF1A0C4E01b336256DacFd1e6326DFcf80",
+    "DreamDEX_BinaryMarketsModule": "0x3ecC694Cef705358864a646142ac17A90E29e388",
+    "DreamDEX_tUSDC": "0x70a86D8842FB63C4Ad2b7cdddF530eBf1BB25d8E"
+  },
+  "deployer": "0x90356CF97B3BF1749A604d3F89b3DF3602A459E3",
+  "note": "2026-09-04 redeploy with forceResolveMarket. Markets 1-3 force-resolved NO (2025 events). Markets 4-9 active 2026."
+}

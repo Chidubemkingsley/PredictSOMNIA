@@ -1,0 +1,42 @@
+// Smart Contract Addresses on Somnia Network
+// 100% LIVE BLOCKCHAIN ADDRESSES - December 22, 2025 Deployment
+export const CONTRACT_ADDRESSES = {
+  // Somnia Mainnet (Not yet deployed)
+  5031: {
+    PREDICTION_MARKET: '0x0000000000000000000000000000000000000000', // To be deployed
+    AI_ORACLE: '0x0000000000000000000000000000000000000000', // To be deployed
+    GASLESS_RELAYER: '0x0000000000000000000000000000000000000000', // To be deployed
+    TRADER_REPUTATION: '0x0000000000000000000000000000000000000000', // To be deployed
+  },
+  // Somnia Shannon Testnet (LIVE - 2026-09-04 forceResolve redeploy)
+  50312: {
+    PREDICTION_MARKET: '0x29C1a65695D8B9E23Fb7775d81a7C4792f9c5661',
+    AI_ORACLE: '0x86a6FBDA8C959Aa724876dbF0f58aD319942b030',
+    GASLESS_RELAYER: '0x384B2460d7AC08Cef74B02E4D80108aDCa4B4A12',
+    TRADER_REPUTATION: '0x580ABA453b81D68a2C7714df6096ba75DD8bDEF9',
+  },
+  // Local Hardhat Network (for development) - Chain ID 31337
+  31337: {
+    PREDICTION_MARKET: '0x5FbDB2315678afecb367f032d93F642f64180aa3',
+    AI_ORACLE: '0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512',
+    GASLESS_RELAYER: '0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0',
+    TRADER_REPUTATION: '0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9',
+  },
+  // Local Hardhat Network (alternate) - Chain ID 1337
+  1337: {
+    PREDICTION_MARKET: '0x5FbDB2315678afecb367f032d93F642f64180aa3',
+    AI_ORACLE: '0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512',
+    GASLESS_RELAYER: '0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0',
+    TRADER_REPUTATION: '0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9',
+  },
+} as const;
+
+export const getContractAddress = (
+  chainId: number,
+  contractName: keyof (typeof CONTRACT_ADDRESSES)[5031]
+) => {
+  if (chainId !== 5031 && chainId !== 50312 && chainId !== 31337 && chainId !== 1337) {
+    throw new Error(`Unsupported chain ID: ${chainId}`);
+  }
+  return CONTRACT_ADDRESSES[chainId as 5031 | 50312 | 31337 | 1337][contractName];
+};
