@@ -6,8 +6,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createPublicClient, createWalletClient, http } from 'viem';
 import { privateKeyToAccount } from 'viem/accounts';
-import { somniaTestnet } from 'viem/chains';
-import { somniaMainnet as somnia } from '@/lib/web3-config';
+import { somniaTestnet, somniaMainnet as somnia } from '@/lib/web3-config';
+
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 const X402_BETTING_ABI = [
   {

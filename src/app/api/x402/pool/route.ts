@@ -21,9 +21,11 @@ import {
   type Hex,
   verifyTypedData
 } from 'viem';
-import { somniaTestnet } from 'viem/chains';
-import { somniaMainnet as somnia } from '@/lib/web3-config';
+import { somniaTestnet, somniaMainnet as somnia } from '@/lib/web3-config';
 import { privateKeyToAccount } from 'viem/accounts';
+
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 const CHAIN_ID = parseInt(process.env.NEXT_PUBLIC_CHAIN_ID || '50312');
 const chain = CHAIN_ID === 5031 ? somnia : somniaTestnet;

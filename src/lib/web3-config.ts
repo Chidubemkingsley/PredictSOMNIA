@@ -51,6 +51,10 @@ export const somniaMainnet = defineChain({
   },
 });
 
+// Alias exports for compatibility
+export const somniaTestnet = somniaShannon;
+export const somnia = somniaMainnet;
+
 // RainbowKit configuration with Somnia support
 const walletConnectProjectId = process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID;
 if (!walletConnectProjectId || walletConnectProjectId === 'demo-project-id') {

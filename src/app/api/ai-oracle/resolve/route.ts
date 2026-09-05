@@ -7,9 +7,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createWalletClient, http, createPublicClient } from 'viem';
 import { privateKeyToAccount } from 'viem/accounts';
-import { somniaTestnet } from 'viem/chains';
-import { somniaMainnet as somnia } from '@/lib/web3-config';
+import { somniaTestnet, somniaMainnet as somnia } from '@/lib/web3-config';
 import { AIAnalyzer } from '@/services/ai-oracle/ai-analyzer';
+
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 import { fetchMarketData } from '@/services/ai-oracle/data-fetcher';
 
 const AI_ORACLE_ABI = [
