@@ -5,7 +5,8 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { createPublicClient, http } from 'viem';
-import { somnia, somniaTestnet } from 'viem/chains';
+import { somniaTestnet } from 'viem/chains';
+import { somniaMainnet as somnia } from '@/lib/web3-config';
 
 const X402_BETTING_ABI = [
   {

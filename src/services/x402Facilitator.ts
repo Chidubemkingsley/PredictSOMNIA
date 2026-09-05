@@ -13,7 +13,8 @@
  */
 
 import { Address, Hex, createPublicClient, createWalletClient, http, formatEther } from 'viem';
-import { somnia, somniaTestnet } from 'viem/chains';
+import { somniaTestnet } from 'viem/chains';
+import { somniaMainnet as somnia } from '@/lib/web3-config';
 import { privateKeyToAccount } from 'viem/accounts';
 import type { PaymentPayload, PaymentRequirements, SettlementResponse } from './x402Client';
 

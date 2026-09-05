@@ -7,7 +7,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createPublicClient, createWalletClient, http } from 'viem';
 import { privateKeyToAccount } from 'viem/accounts';
-import { somnia, somniaTestnet } from 'viem/chains';
+import { somniaTestnet } from 'viem/chains';
+import { somniaMainnet as somnia } from '@/lib/web3-config';
 
 // X402Betting contract ABI (minimal for relay)
 const X402_BETTING_ABI = [

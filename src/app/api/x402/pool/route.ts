@@ -21,7 +21,8 @@ import {
   type Hex,
   verifyTypedData
 } from 'viem';
-import { somniaTestnet, somnia } from 'viem/chains';
+import { somniaTestnet } from 'viem/chains';
+import { somniaMainnet as somnia } from '@/lib/web3-config';
 import { privateKeyToAccount } from 'viem/accounts';
 
 const CHAIN_ID = parseInt(process.env.NEXT_PUBLIC_CHAIN_ID || '50312');
