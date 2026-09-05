@@ -6,11 +6,11 @@
 
 17/17 tests passing. 9 live markets on Shannon 50312. $10-100 saved per 100-1000 bets. 42% gas savings with batching.
 
-[![Event Contracts Hackathon — Somnia Shannon 50312](https://img.shields.io/badge/Event%20Contracts%20Hackathon-Somnia%20Shannon%2050312-8b5cf6?style=for-the-badge)](https://dorahacks.io/hackathon/event-contracts)
+[![Event Contracts Hackathon — Somnia Shannon 50312](https://img.shields.io/badge/Event%20Contracts%20Hackathon-Somnia%20Shannon%2050312-8b5cf6?style=for-the-badge)](https://dorahacks.io/hackathon/event-contracts/)
 [![Somnia × DreamDEX — Event Contracts](https://img.shields.io/badge/Somnia%20x%20DreamDEX-Event%20Contracts%202025-22d3ee?style=for-the-badge)](https://dorahacks.io/hackathon/event-contracts)
 [![Somnia Shannon Exclusive](https://img.shields.io/badge/Somnia%20Shannon-50312-22d3ee?style=for-the-badge)](https://shannon-explorer.somnia.network)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](./LICENSE)
-[![Demo Live](https://img.shields.io/badge/Demo-Live-green?style=for-the-badge)](https://creative-market-six.vercel.app/)
+[![Demo Live](https://img.shields.io/badge/Demo-Live-green?style=for-the-badge)](https://predict-somnia-vmkw.vercel.app//)
 
 ---
 
@@ -204,7 +204,7 @@ node test/test-x402-batch.js     # 5/5 batch tests (42% gas savings)
 
 ## Links
 
-**Try it:** [Live Demo](https://creative-market-six.vercel.app)  
+**Try it:** [Live Demo](https://predict-somnia-vmkw.vercel.app/)  
 **Code:** [GitHub](https://github.com/Chidubemkingsley/PredictSOMNIA.git)  
 **Need testnet STT:** [Shannon Explorer Faucet](https://shannon-explorer.somnia.network) • [Google Cloud Web3 Faucet](https://cloud.google.com/application/web3/faucet) (Somnia Shannon 50312 + tUSDC via `faucet()` 10k cap)
 
