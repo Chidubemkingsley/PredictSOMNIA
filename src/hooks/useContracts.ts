@@ -805,7 +805,7 @@ export function useUserPositions() {
         // Fetch positions for all markets
         const { createPublicClient, http } = await import('viem');
         const { somniaTestnet } = await import('viem/chains');
-        const { somniaMainnet: somnia } = await import('@/lib/web3-config');
+        const { somniaMainnet: somnia } = await import('../lib/web3-config');
         
         const chain = effectiveChainId === 5031 ? somnia : somniaTestnet;
         const client = createPublicClient({
